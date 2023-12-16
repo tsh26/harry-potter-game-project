@@ -1,0 +1,11 @@
+10
+1|You ran into the wall of the wrong platform!|-200
+2|You received a welfare pack from headmaster, Professor Albus Dumbledore!|+300
+3|Dumbledore deducted Gryffindor's house score.|-400
+4|You have reached Slytherin House and fought with Malfoy.|-300
+5|You went to Ollivander's wand shop and found the Elders wand.|+400
+6|You encountered the Dementors!|-600
+7|You woke up Basilisk, the King Of Serpents!|-200
+8|This cloak protects you during battles.|+500
+9|You spilled health potion on yourself.|+300
+10|You have encountered Lord Voldermort.. Be prepared for the final battle! You are given 3 health potions.| 0

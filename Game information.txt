@@ -1,0 +1,107 @@
+---------------------------------------------------------------------------------
+Python was taught for a 4 credits elective module (Fundamentals of Programming) 
+that i chose to do voluntarily while studying in SP.
+This is a modular program that i have coded using what i've learnt during the semester.
+----------------------------------------------------------------------------------
+
+Variable Scope: global and local
+   *Use 'global' keyword to access global variable value
+   so it will still be valid outside the function scope
+
+Function: reusable, flexible and makes the code cleaner
+          One function should handle one job only
+          => more modular program => easier to debug and maintain
+     *parameter(can be many) must match when the function is called
+     *can return a value
+      In our code, they are 'int(player_attack())' and 'int(boss_attack())'
+
+Collections: grouping data
+    Tuples () - collection which is ordered and unchangeable.
+    thistuple = ("apple", "banana", "cherry")
+    print(thistuple)	
+
+    Set {} - unordered and unindexed
+    thisset = {"apple", "banana", "cherry"}
+    print(thisset)
+
+
+    List: indexed 
+    * List index starts from 0
+      + Heroes and Events are lists which contain dictionary (hero and event)
+
+   thislist = ["apple", "banana", "cherry"]
+   print(thislist)
+
+
+    Dictionary: key-value collection. In this scenario, we use dictionary as object.
+                Actually we should use classes instead.
+
+        +Hero                        +Boss        +Event
+[key]    +name                        +name        +location (ordinal)
+         +hp                          +hp          +title
+         +n (normal damage)                        +damage (last location is 0)
+         +specialskillname
+         +s (special skill damage)
+         +h 
+
+    syntax: dictionary['key'] (return dictionary value)
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
+Tasks:
+    - Read input file of heroes (get_hero_data())
+        + Open the file
+        + Read the number of heroes (1st line)
+        + Loop and add heroes to list (heroes)  
+            + Read 1 line from the text file
+            + Split the text by delimeter (,)
+            + Add the hero to the list
+
+    - Read input file of events(get_event_data())
+
+    - Choose hero (show_menu())
+        + create a while loop until user press 's'
+        + in each loop:
+            + show the hero information
+            + get user input
+         /In each loop, we save current hero to global variable 'hero'.
+         So, if user end the loop with 's', the lastest hero is the chosen one.
+         Also, we reset the 'i' value when the lastest hero was reached./
+
+    - Journey (roll_the_dice())
+        + Get random number
+        + Update current location
+        + Move to location  
+            - if 10th location, fight the boss (fight_the_boss())
+            - else, go to normal location(go_to_location())
+
+        *go_to_location()
+            + update hero hp
+            + show location information
+            + roll the dice again (roll_the_dice())
+        *fight_the_boss() 
+            + init the turn
+            + create while loop until one die (*interrupt by show_turn_info())
+                - if player turn
+                    + player_attack()
+                    + update hp  
+                    + show_turn_info()
+                - if boss turn
+                    + boss_attack()
+                    + update hp
+                    + show_turn_info()
+
+        *show_turn_info()
+           + Notify hp of victim
+           + End the game if victim's hp is under 0
+
+    - Fight
+        Player attack (player_attack())
+            + show skill options (n/s/h)
+            + get hero skill damage
+            + return the damage value
+        Boss attack (boss_attack())
+            + get random damage value
+            + return the damage value
+

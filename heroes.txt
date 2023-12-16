@@ -1,0 +1,5 @@
+4
+Harry Potter, 5000, 550, Avada Kedavra, 750
+Ron Weasley, 4000, 600, Expecto Petronum, 853
+Hermione Granger, 4500, 550, Wingardium Leviosa, 900
+Lord Voldermort, 5000
